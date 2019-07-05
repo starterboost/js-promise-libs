@@ -1,12 +1,12 @@
 {
   "name": "@starterboost/promise-libs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "tests": "mocha tests",
     "tests:watch": "mocha tests --watch ./",
-    "release" : "project-release"
+    "release": "project-release"
   },
   "devDependencies": {
     "lodash": "^4.17.11",
