@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "tests": "mocha tests",
-    "tests:watch": "mocha tests --watch ./"
+    "tests:watch": "mocha tests --watch ./",
+    "release" : "project-release"
   },
   "devDependencies": {
     "lodash": "^4.17.11",
