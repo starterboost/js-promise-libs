@@ -1,0 +1,16 @@
+{
+  "name": "@starterboost/promise-libs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "tests": "mocha tests",
+    "tests:watch": "mocha tests --watch ./"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.5"
+  }
+}
