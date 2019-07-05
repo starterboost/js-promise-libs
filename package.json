@@ -10,7 +10,8 @@
   "devDependencies": {
     "lodash": "^4.17.11",
     "mocha": "^6.1.4",
-    "sinon": "^7.3.2"
+    "sinon": "^7.3.2",
+    "@starterboost/project-scripts": "starterboost/project-scripts"
   },
   "dependencies": {
     "bluebird": "^3.5.5"
