@@ -31,4 +31,8 @@ PromiseResolver.prototype.reject = function( err ){
 	return this.isPending() ? this._reject( err ) : Promise.reject( err );
 }
 
+PromiseResolver.prototype.finally = function( promise ){
+	return this.promise.finally( promise );
+}
+
 module.exports = PromiseResolver;
