@@ -25,7 +25,7 @@ PromiseResolver.prototype.resolve = function( value ){
 	//if pending then resolve the promose - otherwise create new
 	if(!this.completed){
 		this.completed = true;
-		return this.isPending() ? this._resolve( value ) : Promise.resolve( value );
+		return this._resolve( value );
 	}
 }
 
@@ -35,7 +35,7 @@ PromiseResolver.prototype.reject = function( err ){
 	//if pending then reject the promose - otherwise create new
 	if(!this.completed){
 		this.completed = true;
-		return this.isPending() ? this._reject( err ) : Promise.reject( err );
+		return this._reject( err );
 	}
 }
 
