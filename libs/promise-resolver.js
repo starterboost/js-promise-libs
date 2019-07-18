@@ -7,6 +7,8 @@ function PromiseResolver( options = {} ){
 		this._resolve = resolve;
 		this._reject = reject;
 	} );
+
+	this.completed = false;
 }
 
 PromiseResolver.prototype.isFulfilled = function(){
@@ -21,14 +23,20 @@ PromiseResolver.prototype.resolve = function( value ){
 	//only throw if told to throw
 	if( this.throwIfFulfilled && this.isFulfilled() ) throw new Error('Already fulfilled promise');
 	//if pending then resolve the promose - otherwise create new
-	return this.isPending() ? this._resolve( value ) : Promise.resolve( value );
+	if(!this.completed){
+		this.completed = true;
+		return this.isPending() ? this._resolve( value ) : Promise.resolve( value );
+	}
 }
 
 PromiseResolver.prototype.reject = function( err ){
 	//only throw if told to throw
 	if( this.throwIfFulfilled && this.isFulfilled() ) throw new Error('Already fulfilled promise');
 	//if pending then reject the promose - otherwise create new
-	return this.isPending() ? this._reject( err ) : Promise.reject( err );
+	if(!this.completed){
+		this.completed = true;
+		return this.isPending() ? this._reject( err ) : Promise.reject( err );
+	}
 }
 
 PromiseResolver.prototype.finally = function( promise ){

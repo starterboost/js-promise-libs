@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const Promise = require('bluebird');
 const EventEmitter = require('events').EventEmitter;
 const assert = require('assert');
@@ -28,7 +29,7 @@ PromiseQueue.prototype.add = function( data ){
 	//take into account the timeout if it is in place
 	if( util.isNumber( this.timeout ) ){
 		Promise.delay( this.timeout ).then( () => {
-			resolver.reject('Request timeout');
+			resolver.reject( 'Promise timeout' );
 		} );
 	}
 	//return the promise
@@ -83,6 +84,7 @@ PromiseQueue.prototype.next = function( delay = 0 ){
 
 //HELPER
 function RemoveItem( arr, item ){
+
 	const index = arr.indexOf( item );
 	if( index > -1 ){
 		arr.splice( index, 1 );
