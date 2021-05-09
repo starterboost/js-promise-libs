@@ -9,7 +9,7 @@
     "release": "project-release"
   },
   "devDependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "mocha": "^6.1.4",
     "sinon": "^7.3.2",
     "@starterboost/project-scripts": "starterboost/project-scripts"
